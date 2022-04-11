@@ -16,9 +16,8 @@ jobs:
           shell: bash
           run: |
             cd banking
-            mkdir built && cd built
-            cmake ..
-            cmake --build .
+            cmake -H. -B_build
+            cmake --build _build
             
         - name: build_main
           shell: bash
@@ -30,6 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - name: test
         shell: bash
         run: |
