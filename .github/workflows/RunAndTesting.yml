@@ -12,7 +12,7 @@ jobs:
       steps:
         - uses: actions/checkout@v2
 
-        - name: build banking_lib
+        - name: build banking
           shell: bash
           run: |
             cd banking
@@ -24,6 +24,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: update
+        run:  sudo apt install git && git submodule update --init
       
       - name: test
         shell: bash
