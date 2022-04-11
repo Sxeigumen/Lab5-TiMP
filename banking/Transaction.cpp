@@ -36,8 +36,8 @@ bool Transaction::Make(Account& from, Account& to, int sum) {
 
   Credit(to, sum);
 
-  bool success = Debit(to, sum + fee_);
-  if (!success) to.ChangeBalance(-sum);
+  bool success = Debit(from, sum + fee_); //Менял to на from
+  if (!success) from.ChangeBalance(-sum); //Менял to на from
 
   SaveToDataBase(from, to, sum);
   return success;
