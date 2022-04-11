@@ -9,14 +9,25 @@ jobs:
 
   BuildProject:
   
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: build
-        shell: bash
-        run: |
-          cmake -H. -B_build
-          cmake --build _build
+    build_lib:
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: build banking_lib
+          shell: bash
+          run: |
+            cd banking
+            mkdir built && cd built
+            cmake ..
+            cmake --build .
+            
+        - name: build_main
+          shell: bash
+          run: |
+            cmake -H. -B_build
+            cmake --build _build
           
   Testing:
     runs-on: ubuntu-latest
