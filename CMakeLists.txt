@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4)
 
 project(TestRunning)
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest/googletest/include gtest)
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest" "gtest")
 
 #add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest/gmock gmock)
 
