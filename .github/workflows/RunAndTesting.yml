@@ -8,10 +8,7 @@ on:
 jobs:
 
   BuildProject:
-  
-    build_lib:
       runs-on: ubuntu-latest
-
       steps:
         - uses: actions/checkout@v2
 
