@@ -18,21 +18,21 @@ jobs:
             cd banking
             cmake -H. -B_build
             cmake --build _build
-            
-        - name: build_main
-          shell: bash
-          run: |
-            cmake -H. -B_build
-            cmake --build _build
           
   Testing:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       
+      - name: prepare environment
+        run:  sudo apt install git &&
+              git submodule update --init
+      
       - name: test
         shell: bash
         run: |
+          cmake -H. -B_build
+          cmake --build _build
           cd _build
           ./RunTest
         
