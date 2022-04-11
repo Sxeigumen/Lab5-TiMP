@@ -24,9 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: prepare environment
-        run:  sudo apt install git &&
-              git submodule update --init
       
       - name: test
         shell: bash
