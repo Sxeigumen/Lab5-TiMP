@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/RunTest.dir/tests/test.cpp.o  -o RunTest  lib/libgtest.a lib/libgtest_main.a lib/libgmock_main.a banking/libbanking.a lib/libgmock.a lib/libgtest.a -lpthread 
