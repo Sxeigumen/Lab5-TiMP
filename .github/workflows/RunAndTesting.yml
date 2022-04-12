@@ -43,4 +43,4 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${ 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 }        
-          path-to-lcov: _build/RunTest.info
+          path-to-lcov: ./output/coverage/lcov.info
