@@ -34,4 +34,8 @@ jobs:
           cmake --build _build
           cd _build
           ./RunTest
-        
+          
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ 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 }}        
