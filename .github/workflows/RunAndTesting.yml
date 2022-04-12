@@ -34,6 +34,7 @@ jobs:
           cmake --build _build
           cd _build
           ./RunTest
+          lcov -t "banking" -o banking.info -c -d .
           
       - name: Coveralls
         uses: coverallsapp/github-action@master
