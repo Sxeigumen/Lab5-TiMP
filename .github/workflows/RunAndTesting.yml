@@ -38,4 +38,4 @@ jobs:
       - name: Coveralls
         uses: coverallsapp/github-action@Master
         with:
-          github-token: ${{ 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 }}        
+          github-token: ${ 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 }        
