@@ -35,6 +35,7 @@ jobs:
         run: |
           cmake -H. -B_build
           cmake --build _build
+          cd _build
           ./RunTest
           lcov -t "RunTest" -o RunTest.info -c -d .
           
