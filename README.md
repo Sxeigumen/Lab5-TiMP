@@ -1,2 +1,1 @@
-# Lab5-TiMP
-[![Coverage Status](https://coveralls.io/repos/github/Sxeigumen/lab05/badge.svg?branch=master)](https://coveralls.io/github/Sxeigumen/lab05?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Sxeigumen/Lab5-TiMP/badge.svg?branch=Master)](https://coveralls.io/github/Sxeigumen/Lab5-TiMP?branch=Master)
