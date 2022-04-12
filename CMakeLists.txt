@@ -4,11 +4,6 @@ project(TestRunning)
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest" "gtest")
 
-if (COVERAGE)
-    target_compile_options(testBanking PRIVATE --coverage)
-    target_link_libraries(testBanking PRIVATE --coverage)
-endif()
-
 #add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest/gmock gmock)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/banking)
