@@ -36,7 +36,7 @@ jobs:
           cmake --build _build
           cd _build
           ./RunTest
-          lcov -t "RunTest" -o lcov.info -c -d .
+          lcov -t "banking" -o lcov.info -c -d .
           
       - name: CovBeg
         uses: coverallsapp/github-action@master
