@@ -4,7 +4,7 @@ project(TestRunning)
 
 SET(COVERAGE OFF CACHE BOOL "Coverage")
 
-set(CMAKE_CXX_COMPILER "/usr/bin/g++")
+SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest" "gtest")
 
