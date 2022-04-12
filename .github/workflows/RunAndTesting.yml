@@ -37,14 +37,14 @@ jobs:
           cmake --build _build
           cd _build
           ./RunTest
-          lcov -t "RunTest" -o RunTest.info -c -d .
+          lcov -t "RunTest" -o lcov.info -c -d .
           
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
           parallel: true
-          path-to-lcov: _built/RunTest.info
+          path-to-lcov: _built/lcov.info
           coveralls-endpoint: https://coveralls.io
 
       - name: Coveralls Finished
