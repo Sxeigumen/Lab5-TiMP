@@ -38,7 +38,7 @@ jobs:
           ./RunTest
           lcov -t "RunTest" -o lcov.info -c -d .
           
-      - name: Coveralls Parallel
+      - name: CovBeg
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
@@ -46,7 +46,7 @@ jobs:
           path-to-lcov: ./lcov.info
           coveralls-endpoint: https://coveralls.io
 
-      - name: Coveralls Finished
+      - name: CovFin
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}
