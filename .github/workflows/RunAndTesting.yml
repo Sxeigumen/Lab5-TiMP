@@ -43,7 +43,7 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
           parallel: true
-          path-to-lcov: ./lcov.info
+          path-to-lcov: ./_build/lcov.info
           coveralls-endpoint: https://coveralls.io
 
       - name: CovFin
