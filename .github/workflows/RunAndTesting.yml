@@ -28,13 +28,13 @@ jobs:
         run:  |
           git submodule update --init
           sudo apt install lcov
-          sudo apt install g++
+          sudo apt install g++-7
       
       - name: test
         shell: bash
         run: |
           mkdir _built && cd _built
-          CXX=/usr/bin/g++ cmake -DCOVERAGE=1 ..
+          CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
           cmake --build .
           ./RunTest
           lcov -t "RunTest" -o RunTest.info -c -d .
