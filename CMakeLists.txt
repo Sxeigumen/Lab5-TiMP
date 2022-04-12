@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 3.4)
 
-project(TestRunning)
-
 SET(COVERAGE OFF CACHE BOOL "Coverage")
-
 SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
+
+project(TestRunning)
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest" "gtest")
 
