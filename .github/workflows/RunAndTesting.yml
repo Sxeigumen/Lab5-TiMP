@@ -39,9 +39,16 @@ jobs:
           ./RunTest
           lcov -t "RunTest" -o RunTest.info -c -d .
           
-      - name: Coveralls
+      - name: Coveralls Parallel
         uses: coverallsapp/github-action@master
         with:
-          github-token: ${ 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 }        
-          path-to-lcov: _build/RunTest.info
+          github-token: ${{ secrets.github_token }}
+          parallel: true
+          path-to-lcov: ./_built/RunTest.info
           coveralls-endpoint: https://coveralls.io
+
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel-finished: true
