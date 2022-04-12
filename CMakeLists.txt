@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.4)
 
 project(TestRunning)
 
+SET(COVERAGE OFF CACHE BOOL "Coverage")
+
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
+
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest" "gtest")
 
 #add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest/gmock gmock)
@@ -9,6 +13,11 @@ add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest" "gtest")
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/banking)
 
 add_executable(RunTest ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp)
+
+if (COVERAGE)
+    target_compile_options(testBanking PRIVATE --coverage)
+    target_link_libraries(testBanking PRIVATE --coverage)
+endif()
 
 target_include_directories(RunTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/banking)
 
